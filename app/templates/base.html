@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{% block title %}Placement Prediction System{% endblock %}</title>
 
-    <link rel="stylesheet"
-    href="{{ url_for('static',filename='css/style.css') }}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
+
 <body>
 
-<nav>
+    <!-- ================= NAVBAR ================= -->
 
-    <h2 class="logo">Placement Prediction System</h2>
+    <header>
 
-    <ul class="menu">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/predict">Prediction</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
+        <nav class="navbar">
 
-</nav>
+            <div class="logo">
 
-{% block content %}
-{% endblock %}
+                <a href="{{ url_for('name') }}">
+                    🎓 Placement Prediction System
+                </a>
+
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="{{ url_for('name') }}">Home</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('dataset') }}">Dataset</a>
+                </li>
+
+                <!-- Prediction route create chesaka uncomment cheyyi -->
+                <!--
+                <li>
+                    <a href="{{ url_for('prediction') }}">Prediction</a>
+                </li>
+                -->
+
+                <li>
+                    <a href="#">Prediction</a>
+                </li>
+
+                <li>
+                    <a href="#">About</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= PAGE CONTENT ================= -->
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
 
 </body>
+
 </html>

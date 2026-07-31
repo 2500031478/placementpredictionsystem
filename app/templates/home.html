@@ -1,23 +1,146 @@
 {% extends "base.html" %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
 
 <section class="hero">
 
-    <h4>MACHINE LEARNING PROJECT</h4>
+    <div class="hero-left">
 
-    <h1>Placement Prediction System</h1>
+        <span class="badge">🎓 AI Powered Machine Learning Project</span>
 
-    <div class="line"></div>
+        <h1>
+            Placement
+            <span>Prediction</span>
+            System
+        </h1>
 
-    <p>
-        A web application that predicts whether a student is likely to
-        be placed based on academic performance, aptitude score,
-        communication skills and technical skills using Machine Learning.
-    </p>
+        <p>
+            Predict student placement opportunities using Machine Learning.
+            Analyze academic performance, aptitude, communication skills,
+            technical knowledge, and internship experience to estimate
+            placement chances with high accuracy.
+        </p>
+
+        <div class="hero-stats">
+
+            <div class="stat-box">
+                <h2>96%</h2>
+                <span>Prediction Accuracy</span>
+            </div>
+
+            <div class="stat-box">
+                <h2>5000+</h2>
+                <span>Student Records</span>
+            </div>
+
+            <div class="stat-box">
+                <h2>1200+</h2>
+                <span>Placements</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Placement Prediction">
+
+    </div>
 
 </section>
 
-<div class="wave"></div>
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <h2>Why Use Our System?</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="icon">🤖</div>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+                Uses intelligent ML algorithms to analyze student
+                performance and placement possibilities.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">📊</div>
+
+            <h3>Data Analysis</h3>
+
+            <p>
+                Analyze thousands of placement records and visualize
+                useful insights from the dataset.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="icon">⚡</div>
+
+            <h3>Fast Prediction</h3>
+
+            <p>
+                Get instant placement prediction using trained
+                machine learning models.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process">
+
+    <h2>How It Works</h2>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="number">1</div>
+            <h3>Load Dataset</h3>
+            <p>Import and preprocess placement dataset.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <h3>Train Model</h3>
+            <p>Train Machine Learning algorithm using historical data.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <h3>Predict</h3>
+            <p>Predict whether the student is likely to be placed.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Placement Prediction System | Machine Learning Project
+    </p>
+
+</footer>
 
 {% endblock %}

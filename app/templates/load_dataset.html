@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset{% endblock %}
+
+{% block content %}
+
+<section class="dataset-page">
+
+    <div class="dataset-header">
+
+        <span class="badge">📊 Machine Learning Dataset</span>
+
+        <h1>Placement Dataset Overview</h1>
+
+        <p>
+            Explore the placement dataset used to train the Machine Learning model.
+            The table below displays a preview of the dataset along with key statistics.
+        </p>
+
+    </div>
+
+    <!-- ================= SUMMARY CARDS ================= -->
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+            <div class="summary-icon">📄</div>
+            <h2>{{ summary.rows }}</h2>
+            <span>Total Rows</span>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-icon">📋</div>
+            <h2>{{ summary.columns }}</h2>
+            <span>Total Columns</span>
+        </div>
+
+        <div class="summary-card">
+            <div class="summary-icon">🎯</div>
+            <h2>{{ summary.target }}</h2>
+            <span>Target Column</span>
+        </div>
+
+    </div>
+
+    <!-- ================= DATA TABLE ================= -->
+
+    <div class="table-section">
+
+        <div class="table-header">
+
+            <h2>Dataset Preview</h2>
+
+            <p>
+                First five records from the placement dataset.
+            </p>
+
+        </div>
+
+        <div class="table-card">
+
+            {{ first_rows | safe }}
+
+        </div>
+
+    </div>
+
+    <!-- ================= INFORMATION ================= -->
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <h3>📚 Dataset Purpose</h3>
+
+            <p>
+                This dataset is used for training and testing the Placement
+                Prediction Machine Learning model.
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>🤖 Machine Learning</h3>
+
+            <p>
+                The model analyzes academic and technical attributes
+                to estimate placement probability.
+            </p>
+
+        </div>
+
+        <div class="info-card">
+
+            <h3>📈 Data Analysis</h3>
+
+            <p>
+                Dataset statistics help understand feature distribution
+                before training the prediction model.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
