@@ -1,3 +1,4 @@
+
 from src.data.load_data import load_data
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -113,6 +114,23 @@ def bivariate(df):
     plt.show()
     plt.close()
 
+    plt.figure(figsize=(6, 5))
+    placed = df[df["PlacementStatus"] == 1]["CGPA"]
+    not_placed = df[df["PlacementStatus"] == 0]["CGPA"]
+
+    plt.boxplot(
+        [placed, not_placed],
+        tick_labels=["placed", "not placed"]
+    )
+    plt.title("CGPA vs Placement Status")
+    plt.xlabel("PlacementStatus")
+    plt.ylabel("CGPA")
+    plt.savefig(
+        r"C:\Users\dhanu\PycharmProjects\PlacementPredictionSystem\app\static\charts\CGPA_PlacementStatus_boxplot.png"
+    )
+    plt.show()
+    plt.close()
+
 
 def multivariate(df):
     data = df[["CGPA", "AptitudeTestScore", "PlacementStatus"]]
@@ -126,31 +144,13 @@ def multivariate(df):
         cmap="coolwarm",
         fmt=".2f"
     )
+
     plt.title("Correlation HeatMap")
     plt.savefig(
         r"C:\Users\dhanu\PycharmProjects\PlacementPredictionSystem\app\static\charts\HEATMAP.png"
     )
     plt.savefig(
         r"C:\Users\dhanu\PycharmProjects\PlacementPredictionSystem\app\static\charts\Correlation_HeatMap.png"
-    )
-    plt.show()
-    plt.close()
-
-
-def missing_values_plot(df):
-    missing = df.isnull().sum()
-    missing = missing[missing > 0]
-
-    plt.figure(figsize=(7, 5))
-    plt.bar(missing.index, missing.values)
-    plt.title("Missing Values")
-    plt.xlabel("Columns")
-    plt.ylabel("Number of Missing Values")
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-
-    plt.savefig(
-        r"C:\Users\dhanu\PycharmProjects\PlacementPredictionSystem\app\static\charts\missing_values.png"
     )
     plt.show()
     plt.close()
@@ -164,4 +164,4 @@ if __name__ == "__main__":
     gendercount(df)
     bivariate(df)
     multivariate(df)
-    missing_values_plot(df)
+
