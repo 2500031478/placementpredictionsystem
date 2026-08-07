@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Exploratory Data Analysis (EDA)</h2>
+
+<!-- CGPA Histogram -->
+<h3>1. CGPA Histogram</h3>
+<img src="{{ url_for('static', filename='chats/histogram.png') }}" alt="CGPA Histogram" width="700">
+
+<br><br>
+
+<!-- CGPA vs Aptitude Test Score -->
+<h3>2. CGPA vs Aptitude Test Score</h3>
+<img src="{{ url_for('static', filename='chats/cgpa_aptitude_test_score.png') }}" alt="CGPA vs Aptitude Test Score" width="700">
+
+<br><br>
+
+<!-- Correlation Heat Map -->
+<h3>3. Correlation Heat Map</h3>
+<img src="{{ url_for('static', filename='chats/Correlation_HeatMap.png') }}" alt="Correlation Heat Map" width="700">
+
+<br><br>
+
+<!-- Gender Pie Chart -->
+<h3>4. Gender Distribution</h3>
+<img src="{{ url_for('static', filename='chats/genderPieChart.png') }}" alt="Gender Pie Chart" width="700">
+
+<br><br>
+
+<!-- Placement Status -->
+<h3>5. Placement Status</h3>
+<img src="{{ url_for('static', filename='chats/Placement_Status.png') }}" alt="Placement Status" width="700">
+
+{% endblock %}

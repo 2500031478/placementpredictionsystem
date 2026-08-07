@@ -1,6 +1,6 @@
 import pandas as pd
 def load_data():
-    df=pd.read_csv(r"C:\Users\dhanu\PycharmProjects\PlacementPredictionSystem\data\placement_data.csv")
+    df=pd.read_csv(r'C:\Users\dhanu\PycharmProjects\PlacementPredictionSystem\data\placement_data.csv')
     return df
 def get_summary(df):
     return {
@@ -8,8 +8,6 @@ def get_summary(df):
         "columns": df.shape[1],
         "target":"PlacementStatus"
     }
-if __name__ == "__main__":
-    df=load_data()
+if __name__ == '__main__':
+    df = load_data()
     print(get_summary(df))
-
-    print(df.head())
